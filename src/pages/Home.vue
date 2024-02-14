@@ -7,7 +7,7 @@ export default {
 
 <template>
   <main>
-    <h1>hello word</h1>
+    <h1 class="  p-10 text-yellow-500">hello word</h1>
   </main>
 </template>
 
