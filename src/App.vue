@@ -1,20 +1,23 @@
-<script setup>
-//import { RouterLink, RouterView } from 'vue-router'
-//import HelloWorld from './components/HelloWorld.vue'
+<script>
+import Header from './components/partials/Header.vue';
+
+  export default {
+    name:'App',
+    components:{
+      Header
+    }
+  }
 </script>
 
 <template>
-  <header>
+  
+  <Header/>
+  <main class=" mt-20 ">
+    <RouterView />
+  </main>
 
-    <div class="wrapper">
-
-      
-    </div>
-  </header>
-
-  <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss">
 
 </style>

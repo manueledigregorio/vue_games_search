@@ -1,14 +1,20 @@
 
 <script>
+import Hero from '../components/partials/Hero.vue';
 export default {
- name:'Home'
+ name:'Home',
+ components:{
+  Hero
+ }
+
 }
 </script>
 
 <template>
-  <main>
-    <h1 class="  p-10 text-yellow-500">hello word</h1>
-  </main>
+  <div>
+  ciao coe
+  </div>
+  <Hero/>
 </template>
 
 <style>
