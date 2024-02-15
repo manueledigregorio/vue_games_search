@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch --minify"
+    "watch": "npx tailwindcss -i ./src/input.css -o ./output.css --watch --minify"
   },
   "dependencies": {
     "axios": "^1.6.7",
