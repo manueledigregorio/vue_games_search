@@ -6,7 +6,7 @@ name:"Hero"
 
 <template>
   <div>
-    <img src="../../../public/hero_games.jpeg" alt="">
+    <img src="../../../public/hero_games.jpeg" class="" alt="">
   </div>
 </template>
 
