@@ -5,11 +5,12 @@ name:"Hero"
 </script>
 
 <template>
-  <div>
-    <img src="../../../public/hero_games.jpeg" class="" alt="">
+  <div class=" relative bottom-20 my_container bg-[url('../../../public/bg_gta_VI.jpeg')]
+   h-[550px] bg-center bg-cover  object-scale-down" >
+    
   </div>
 </template>
 
 <style>
-
+  
 </style>

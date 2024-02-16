@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div>
-  ciao coe
+  
   </div>
   <Hero/>
 </template>
