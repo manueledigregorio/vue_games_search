@@ -12,7 +12,7 @@ import Header from './components/partials/Header.vue';
 <template>
   
   <Header/>
-  <main class=" mt-20 ">
+  <main class=" ">
     <RouterView />
   </main>
 

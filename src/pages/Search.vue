@@ -26,7 +26,11 @@ name:'Search',
 
 </script>
 
-<template></template>
+<template>
+  <div class="bg-[#272727] h-screen w-full">
+
+  </div>
+</template>
 
 <style>
 </style>

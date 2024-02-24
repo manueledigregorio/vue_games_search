@@ -23,7 +23,7 @@ export default {
 
 <template>
 
-  <div class="h-[80px] w-full z-50 absolute top-0 flex justify-between items-center bg-transparent">
+  <div class="h-[80px] w-full z-50 absolute top-0 flex justify-between items-center">
 
     <!-- Start Left Header -->
     <div class="flex items-center">
