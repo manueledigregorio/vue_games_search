@@ -27,7 +27,16 @@ name:'Search',
 </script>
 
 <template>
-  <div class="bg-[#272727] h-screen w-full">
+  <div class="bg-[#272727] min-h-screen w-full">
+
+    <div class="pt-[135px] px-4">
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:px-[50px] xl:px-[100px] 2xl:px-[150px]">
+        <div v-for="(game, index) in store.arrayResults" :key="index" class="h-[240px] w-full">
+          <img :src="game.background_image" alt="" class="h-[200px] w-full object-cover">
+          <h1 class="text-white text-center text-xl ">{{ game.name }}</h1>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
