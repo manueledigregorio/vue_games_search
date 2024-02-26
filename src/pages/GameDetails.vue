@@ -1,7 +1,16 @@
 <script>
+import { store } from "../data/store";
 export default {
-name:'GameDetails'
-}
+  name: "GameDetails",
+  data() {
+    return {
+     
+    };
+  },
+  methods: {
+   
+  },
+};
 </script>
 
 <template>
@@ -9,5 +18,4 @@ name:'GameDetails'
 </template>
 
 <style>
-
 </style>

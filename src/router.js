@@ -23,7 +23,7 @@ const router = createRouter({
 
     },
     {
-      path: "/game/:gameId",
+      path: "/game/:gameSlug",
       name: "GameDetails",
       component: GameDetails,
 

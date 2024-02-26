@@ -5,5 +5,6 @@ export const store = reactive({
   apiSearch:'&search=',
   search: null,
   arrayResult:[],
+  gameDetail:{},
   
 })
