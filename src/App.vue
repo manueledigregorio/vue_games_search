@@ -13,7 +13,7 @@ import Header from './components/partials/Header.vue';
   
   <Header/>
   <main class=" ">
-    <RouterView />
+    <RouterView :key="this.$route.fullPath" />
   </main>
 
 </template>

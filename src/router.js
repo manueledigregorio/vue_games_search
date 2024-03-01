@@ -17,9 +17,12 @@ const router = createRouter({
 
     },
     {
-      path: "/search",
+      path: "/search/:searchQuery",
       name: "Search",
       component: Search,
+      meta: {
+        reload: true,
+      },
 
     },
     {

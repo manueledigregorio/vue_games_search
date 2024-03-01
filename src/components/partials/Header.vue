@@ -9,12 +9,17 @@ export default {
       router,
       store,
       isOpen: false,
+      searchQuery: "",
     };
   },
   methods:{
     goSearch(){
       this.$router.replace({
-        path: "/search",
+        name: "Search",
+        params: {
+          searchQuery: this.searchQuery
+        },
+        
       })
     },
   },
@@ -82,7 +87,7 @@ export default {
         <div class="pe-2 bg-white">
           <i class="fa-solid fa-magnifying-glass "></i>
         </div>
-        <input type="text" v-model="store.search" @keyup.enter="goSearch()" class="focus:outline-none" placeholder="Explore New Games">
+        <input type="text" v-model="searchQuery" @keyup.enter="goSearch()" class="focus:outline-none" placeholder="Explore New Games">
       </div>
       <!-- </div> -->
     </div>
