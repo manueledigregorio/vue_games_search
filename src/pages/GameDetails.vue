@@ -6,27 +6,48 @@ export default {
   data() {
     return {
       store,
-      gameDetail:{}
+      gameDetail: {},
+      isVisible: false,
+      isFirstClick: true
     };
   },
   methods: {
-    getGame(){
-      axios.get(store.apiUrl + 'games/' + this.$route.params.gameSlug ,{
+    getGame() {
+      axios
+        .get(store.apiUrl + "games/" + this.$route.params.gameSlug, {
           params: {
             key: store.key,
-          }
-      })
-      .then((results)=> {
-        this.gameDetail = results.data;
+          },
+        })
+        .then((results) => {
+          this.gameDetail = results.data;
 
-        console.log(this.gameDetail);
-
-      })
+          console.log(this.gameDetail);
+        });
+    },
+    getEmoji(percent) {
+        if(percent >= 55){
+          return  '&#128525;'
+        }else if(percent >= 30){
+          return '&#129392;'
+        }
+        else if(percent >= 6){
+          return '&#128528;'
+        }
+        else { 
+          return '&#129324;'
+        }
+    },
+    toggleVisibility() {
+      if (this.isFirstClick) {
+        this.isVisible = true;
+        this.isFirstClick = false;
+      }
     }
   },
-  mounted(){
+  mounted() {
     this.getGame();
-  }
+  },
 };
 </script>
 
@@ -34,8 +55,8 @@ export default {
   <div class="bg-[#272727] w-full">
     <div class="relative">
       <img
-        :src="gameDetail.background_image"
-        class="h-[550px] w-full opacity-30 object-cover object-top"
+        :src="gameDetail.background_image_additional"
+        class="h-[550px] w-full opacity-40 object-cover object-top"
         :alt="gameDetail.name"
       />
       <div class="separator absolute"></div>
@@ -56,47 +77,62 @@ export default {
           <h1>{{ gameDetail.name }}</h1>
         </div>
         <div class="flex flex-col mt-6 rounded-xl bg-black bg-opacity-35">
-        
-          <h1 class=" text-center text-lg" >Disponibile per queste piattaforme</h1>
+          <h1 class="text-center text-lg">
+            Disponibile per queste piattaforme
+          </h1>
           <div class="flex justify-center">
             <div
-            v-for="platforms in gameDetail.parent_platforms"
-            :key="platforms.platform.id"
-          >
-            
-            <div class="m-2">
-              <img
-                v-if="platforms.platform.slug == 'pc'"
-                width="48"
-                height="48"
-                src="https://img.icons8.com/fluency/48/000000/steam.png"
-                alt="steam"
-              />
-              <img
-                v-else-if="platforms.platform.slug == 'playstation'"
-                width="48"
-                height="48"
-                src="https://img.icons8.com/color/48/000000/play-station.png"
-                alt="play-station"
-              />
-              <img
-                v-else-if="platforms.platform.slug == 'xbox'"
-                width="48"
-                height="48"
-                src="https://img.icons8.com/fluency/48/000000/xbox.png"
-                alt="xbox"
-              />
-              <img
-                v-else-if="platforms.platform.slug == 'nintendo'"
-                width="48"
-                height="48"
-                src="https://img.icons8.com/color/48/nintendo-switch-logo.png"
-                alt="nintendo-switch-logo"
-              />
+              v-for="platforms in gameDetail.parent_platforms"
+              :key="platforms.platform.id"
+            >
+              <div class="m-2">
+                <img
+                  v-if="platforms.platform.slug == 'pc'"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/fluency/48/000000/steam.png"
+                  alt="steam"
+                />
+                <img
+                  v-else-if="platforms.platform.slug == 'playstation'"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/000000/play-station.png"
+                  alt="play-station"
+                />
+                <img
+                  v-else-if="platforms.platform.slug == 'xbox'"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/fluency/48/000000/xbox.png"
+                  alt="xbox"
+                />
+                <img
+                  v-else-if="platforms.platform.slug == 'nintendo'"
+                  width="48"
+                  height="48"
+                  src="https://img.icons8.com/color/48/nintendo-switch-logo.png"
+                  alt="nintendo-switch-logo"
+                />
+              </div>
             </div>
           </div>
+          <div  class="flex justify-center">
+            <div
+            v-for="rating in gameDetail.ratings"
+              :key="rating.id">
+              <div 
+              class="bg-transparent transition-colors p-1 flex flex-col items-center " 
+              
+              @click="toggleVisibility">
+                  <span class="text-2xl hover:text-3xl duration-300 active:text-3xl" :class="{ 'text-3xl': isVisible }" v-html="getEmoji(rating.percent)"></span>
+                  <div v-if="isVisible" >
+                    <p class=" text-sm">{{ rating.percent }}%</p>
+                  </div>  
+              </div>
           </div>
-
+          </div>
+         
         </div>
       </div>
     </div>
