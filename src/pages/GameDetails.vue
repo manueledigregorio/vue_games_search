@@ -25,12 +25,12 @@ export default {
           console.log(this.gameDetail);
         });
     },
-    getEmoji( title) {
+    getEmoji(title) {
       if (title == "exceptional") {
         return "&#128525;";
-      } else if ( title == "recommended") {
+      } else if (title == "recommended") {
         return "&#129392;";
-      } else if ( title == "meh") {
+      } else if (title == "meh") {
         return "&#128528;";
       } else {
         return "&#129324;";
@@ -43,19 +43,35 @@ export default {
       }
     },
     toggleReadMore() {
-      var content = document.querySelector('.read-more-content');
-      var toggleButton = document.querySelector('.read-more-toggle');
+      var content = document.querySelector(".read-more-content");
+      var toggleButton = document.querySelector(".read-more-toggle");
 
       // cambia l'altezza massima del paragrafo
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
-        toggleButton.innerHTML = 'Read more...';
+        toggleButton.innerHTML = "Read more...";
       } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        toggleButton.innerHTML = 'Read less';
+        content.style.maxHeight = content.scrollHeight + "px";
+        toggleButton.innerHTML = "Read less";
       }
-    }
+    },
   },
+  computed: {
+      formattedDate() {
+        if (this.gameDetail.updated) {
+          return this.gameDetail.updated.split("T")[0];
+        } else {
+          return "Data non disponibile";
+        }
+      },
+      addVirgule(){
+        if (this.gameDetail.tags){
+        return  this.gameDetail.tags.slice(0, 3).map(tag => tag.name).join(', ');
+        } 
+        return' ';
+      }
+      
+    },
   mounted() {
     this.getGame();
   },
@@ -85,7 +101,7 @@ export default {
           class="h-[330px] w-[550px] ml-14 card-custom flex flex-col bg-transparent p-6 rounded-lg text-white"
         >
           <div class="text-3xl mb-2">
-            <h1>{{ gameDetail.name }}</h1>
+            <h1 class="font-semibold">{{ gameDetail.name }}</h1>
           </div>
           <p class="text-gray-400">Released: {{ gameDetail.released }}</p>
           <div class="flex flex-col mt-6 rounded-xl bg-black bg-opacity-35">
@@ -154,30 +170,63 @@ export default {
 
     <div class="max-w-7xl mt-20 flex flex-row text-white mx-auto">
       <div class="w-1/2">
-        <div class=" p-5">
-          <h1 class="text-3xl pb-4 text-orange-500">About</h1>
-          <p class="read-more-content text-gray-300 " v-html="gameDetail.description"></p>
-          <span class="read-more-toggle underline underline-offset-2 text-gray-400"  @click="toggleReadMore()">Read more...</span>
+        <div class="p-5">
+          <h1 class="text-3xl pb-4 font-semibold text-orange-500">About</h1>
+          <p
+            class="read-more-content text-gray-300 text-sm leading-6"
+            v-html="gameDetail.description"
+          ></p>
+          <span
+            class="read-more-toggle underline underline-offset-2 text-gray-400"
+            @click="toggleReadMore()"
+            >Read more...</span
+          >
         </div>
-        
       </div>
-      <div class="w-1/2">
-        <div class="pl-14 pb-12">
+      <div class="w-1/2 p-5">
+        <div class="pl-14 pt-[52px]">
           <div class="table-row-group">
-            <div v-for="developer, index in gameDetail.developers" :key="index">
-              <div class="table-row">
-                <div class="table-cell pr-9 align-middle text-sm text-gray-300" >Developer:</div>
-                <div class="table-cell align-middle">{{ developer.name }}</div>
-              </div>
-            </div>  
-              <div class="table-row">
-                <div class="table-cell pr-9 align-middle text-sm text-gray-300">Publisher:</div>
-                <div class="table-cell align-middle">{{ }}</div>
-              </div>
-            
             <div class="table-row">
-              <div class="table-cell pr-9 align-middle text-sm text-gray-300">Shining Star</div>
-              <div class="table-cell align-middle">Earth, Wind, and Fire</div>
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Rating:
+              </div>
+              <div class="table-cell align-middle">
+                {{ gameDetail.rating }} / 5.00
+              </div>
+            </div>
+
+            <div class="table-row" v-if="gameDetail.developers">
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Developer:
+              </div>
+              <div class="table-cell align-middle pr-9">
+                {{ gameDetail.developers[0].name }}
+              </div>
+            </div>
+
+            <div class="table-row" v-if="gameDetail.developers">
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Publisher:
+              </div>
+              <div class="table-cell align-middle pr-9">
+                {{ gameDetail.developers[1].name }}
+              </div>
+            </div>
+
+            <div class="table-row">
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Last Update
+              </div>
+              <div class="table-cell align-middle">{{ formattedDate }}</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Genre:
+              </div>
+              <div
+                class="table-cell align-middle">
+                {{addVirgule}}
+              </div>
             </div>
           </div>
         </div>
@@ -196,14 +245,14 @@ export default {
 }
 
 .read-more-content {
-    max-height: 300px; /* altezza massima iniziale del paragrafo */
-    overflow: hidden; /* nasconde il testo che supera l'altezza massima */
-    transition: max-height 0.3s ease; /* aggiungi una transizione fluida */
-  }
+  max-height: 198px; /* altezza massima iniziale del paragrafo */
+  overflow: hidden; /* nasconde il testo che supera l'altezza massima */
+  transition: max-height 0.3s ease; /* aggiungi una transizione fluida */
+}
 
-  .read-more-toggle {
-    cursor: pointer;
-  }
+.read-more-toggle {
+  cursor: pointer;
+}
 
 .card-custom {
   backdrop-filter: blur(60px) saturate(100%);
