@@ -68,7 +68,7 @@ export default {
         if (this.gameDetail.tags){
         return  this.gameDetail.tags.slice(0, 3).map(tag => tag.name).join(', ');
         } 
-        return' ';
+        return'Non disponibile';
       }
       
     },
@@ -199,8 +199,8 @@ export default {
               <div class="table-cell pr-9 align-middle text-gray-300">
                 Developer:
               </div>
-              <div class="table-cell align-middle pr-9">
-                {{ gameDetail.developers[0].name }}
+              <div class="table-cell align-middle pr-9" v-if="gameDetail.developers">
+                {{ gameDetail.developers[0].name}}
               </div>
             </div>
 
@@ -209,7 +209,7 @@ export default {
                 Publisher:
               </div>
               <div class="table-cell align-middle pr-9">
-                {{ gameDetail.developers[1].name }}
+                {{ gameDetail.publishers[0].name }}
               </div>
             </div>
 
@@ -226,6 +226,15 @@ export default {
               <div
                 class="table-cell align-middle">
                 {{addVirgule}}
+              </div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell pr-9 align-middle text-gray-300">
+                Site web:
+              </div>
+              <div
+                class="table-cell align-middle cursor-pointer">
+                  <a class="underline underline-offset-2 hover:text-orange-500 duration-100" :href="gameDetail.website" target="_blank">{{ gameDetail.website }}</a>
               </div>
             </div>
           </div>
