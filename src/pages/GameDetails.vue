@@ -83,7 +83,7 @@ export default {
     <div class="relative">
       <img
         :src="gameDetail.background_image_additional"
-        class="h-[550px] w-full opacity-40 object-cover object-top"
+        class="h-[550px] w-full opacity-60 object-cover object-top"
         :alt="gameDetail.name"
       />
       <div class="separator absolute"></div>
