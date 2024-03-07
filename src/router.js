@@ -3,6 +3,7 @@ import Home from "./pages/Home.vue"
 import Search from './pages/Search.vue';
 import GameDetails from './pages/GameDetails.vue';
 import Error404 from './pages/Error404.vue';
+import Category from './pages/Category.vue';
 
 
 const router = createRouter({
@@ -24,6 +25,11 @@ const router = createRouter({
         reload: true,
       },
 
+    },
+    {
+      path: "/category/:categoryQuery",
+      name: "Category",
+      component: Category,
     },
     {
       path: "/game/:gameSlug",

@@ -7,5 +7,5 @@ export const store = reactive({
   search: null,
   arrayResult:[],
   gameDetail:{},
-  
+  genreResults:[]
 })
