@@ -37,7 +37,7 @@ export default {
 
 <template>
   <div
-    class="sm:h-[80px] w-full z-50 top-0 left-0 fixed flex justify-between items-center pb-2"
+    class="sm:h-[80px] w-screen z-50 top-0 left-0 fixed flex justify-between items-center pb-2"
   >
     <!-- Start Left Header -->
     <div class="sm:flex items-center w-full mx-4">
@@ -70,7 +70,7 @@ export default {
             <li v-for="(tag, index) in store.genreResults" :key="index">
               <a
                 href="#"
-                @click="goToCategory(tag.id)"
+                @click="goToCategory(tag.slug)"
                 class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                 >{{ tag.name }}</a
               >
