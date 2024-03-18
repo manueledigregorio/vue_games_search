@@ -6,11 +6,21 @@ name:"Hero"
 
 <template>
   <div class=" bg-[url('../../../public/bg_gta_VI.jpeg')]
-   h-[550px] bg-center bg-cover  object-scale-down" >
+   h-[300px] sm:h-[550px] bg-center bg-cover  object-scale-down" >
     
   </div>
-</template>
+  <div class="separator absolute">
 
-<style>
+</div>
+</template >
+
+<style lang="scss" scoped>
+  .separator {
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: 5.8vw solid #272727;
+    margin-top: -5.7vw;
+  }
   
 </style>
