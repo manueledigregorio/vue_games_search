@@ -5,6 +5,7 @@ import Hero from '../components/partials/Hero.vue';
 import GameCard from "../components/partials/GameCard.vue";
 import CardSlider from "../components/partials/CardSlider.vue";
 
+
 export default {
  name:'Home',
  data() {
@@ -43,10 +44,15 @@ export default {
 <template>
   <div class="bg-[#272727] min-h-screen w-full">
     <Hero/>
-  <div class=" pt-4 px-4">
-    <h1 class="text-2xl font-semibold text-orange-500 lg:pl-16"> Top giochi </h1>
-    <CardSlider :gamesRating="gamesRating"/>
-  </div>
+    <div class=" py-4 max-w-7xl mx-auto ">
+      <h1 class=" text-3xl sm:text-4xl font-semibold text-orange-500 text-center pb-6 "> Bestseller</h1>
+      <CardSlider :gamesRating="gamesRating"/>
+    </div>
+    <div class=" bg-slate-950 h-[145px] w-full mt-12">
+      <div class="flex justify-center ite">
+        <div> <i class="fa-regular fa-cloud-arrow-down"></i> </div>
+      </div>
+    </div>
   </div>
   
 </template>

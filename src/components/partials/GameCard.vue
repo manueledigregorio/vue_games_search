@@ -1,13 +1,14 @@
 <template>
-  <div class="h-[240px] my-5 w-full">
-    <img
-      :src="game.background_image"
-      alt=""
-      @click="goToGame(game)"
-      class="h-full w-full object-cover rounded-md"
-    />
-    <h1 class="text-white text-center text-xl">{{ game.name }}</h1>
-  </div>
+  <div class="h-[240px] mb-6 w-full transition-transform duration-300 transform hover:scale-105">
+  <img
+    :src="game.background_image"
+    alt=""
+    @click="goToGame(game)"
+    class="h-full w-full object-cover rounded-md"
+  />
+  <h1 class="text-white text-center text-xl">{{ game.name }}</h1>
+</div>
+
 </template>
 
 <script>
