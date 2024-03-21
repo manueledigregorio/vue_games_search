@@ -30,12 +30,7 @@ export default {
           console.log(store.arrayResults);
         });
     },
-    goToGame(game) {
-      this.$router.push({
-        name: "GameDetails",
-        params: { gameSlug: game.slug },
-      });
-    },
+   
   },
   mounted() {
     this.getSearch();

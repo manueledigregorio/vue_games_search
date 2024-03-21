@@ -64,7 +64,10 @@
 <style lang="scss">
 .mySwiper{
   max-width: 1200px ;
-  
+
+}
+.swiper-wrapper{
+  padding-bottom: 10px;
 }
 .swiper-slide {
   transition-duration: 500ms; /* Modifica la durata della transizione a 500ms (o qualsiasi altro valore desiderato) */
