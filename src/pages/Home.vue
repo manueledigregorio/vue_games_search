@@ -60,7 +60,7 @@ export default {
 </script>
 
 <template>
-  <div class="bg-[#272727] min-h-screen w-full">
+  <div class="bg-[#272727] min-h-screen pb-32 w-full">
     <Hero />
     <div class="py-4 max-w-7xl mx-auto">
       <h1
@@ -105,28 +105,26 @@ export default {
         </div>
       </div>
     </div>
-    <div class="relative flex justify-start items-center mt-28 bg-neutral-700">
-      <img
-        src="../../public/deadcells.png"
-        class=" object-cover"
-        alt="Dead Cells"
-      />
-      <div class="absolute flex-none w-[360px] h-[590px] left-96 ">
-        <img
-          src="../../public/beheaded.png"
-          class="w-full h-full object-cover"
-          alt="beh ded"
-        />
-      </div>
+    <div class="sm:bg-[url('../../public/deadcells.png')] bg-none bg-no-repeat bg-contain p-12 relative flex justify-center items-center md:mt-28">
+      <div class="flex justify-center">
+        <div class=" mr-6 w-[360px] h-[590px] hidden 2xl:block">
+          <img
+            src="../../public/beheaded.png"
+            class=" w-full h-full object-cover"
+            alt="beh ded"
+          />
+        </div>
     
-      <div class=" flex-col  ml-48">
-        <h1 class=" mb-12 text-4xl text-orange-500 font-medium">Top Indie Games</h1>
-        <div class="grid grid-cols-2 gap-4" > 
-          <CardSmall  :game="game" v-for="(game, index) in gamesIndie" :key="index" class="" />
-          <!-- component -->
+        <div>
+          <h1 class=" mb-12 text-4xl text-orange-500 font-medium">Top Indie Games</h1>
+          <div class="grid sm:grid-cols-2 gap-4" > 
+            <CardSmall  :game="game" v-for="(game, index) in gamesIndie" :key="index" />
+            <!-- component -->
 
+          </div>
         </div>
       </div>
+      
       
      
     </div>

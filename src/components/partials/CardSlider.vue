@@ -35,7 +35,7 @@
 </script>
 <template >
   <swiper
-    :spaceBetween="30"
+    :spaceBetween="26"
     :slidesPerView="1"
     
     :pagination="{
@@ -67,7 +67,8 @@
 
 }
 .swiper-wrapper{
-  padding-bottom: 10px;
+  padding: 10px;
+  
 }
 .swiper-slide {
   transition-duration: 500ms; /* Modifica la durata della transizione a 500ms (o qualsiasi altro valore desiderato) */

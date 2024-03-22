@@ -1,6 +1,7 @@
 <script>
 import Header from './components/partials/Header.vue';
 import { store } from './data/store';
+import Footer from './components/partials/Footer.vue';
 
 import axios from 'axios';
   export default {
@@ -11,7 +12,8 @@ import axios from 'axios';
       }
     },
     components:{
-      Header
+      Header,
+      Footer
     },
     
 
@@ -39,6 +41,7 @@ import axios from 'axios';
   <main class=" ">
     <RouterView :key="this.$route.fullPath" />
   </main>
+  <Footer/>
 
 </template>
 
