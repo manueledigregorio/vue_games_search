@@ -44,7 +44,7 @@ export default {
       <div
         class="grid pb-10 grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:px-[50px] xl:px-[100px] 2xl:px-[150px]"
       >
-        <GameCard :game="game" v-for="(game, index) in store.arrayResults" :key="index"/>
+        <GameCard :game="game" v-for="(game, index) in store.arrayResults" :key="index" class="pb-5"/>
         
       </div>
     </div>

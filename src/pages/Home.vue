@@ -59,7 +59,7 @@ export default {
 </script>
 
 <template>
-  <div class="bg-[#272727] min-h-screen pb-32 w-full">
+  <div class="bg-[#272727] min-h-screen pb-20 w-full">
     <Hero />
     <div class="py-4 max-w-7xl mx-auto">
       <h1
@@ -70,7 +70,7 @@ export default {
       <CardSlider :gamesRating="gamesRating" />
     </div>
     <div
-      class="bg-zinc-900 md:h-[145px] h-[350px] w-full mt-12 md:flex flex-wrap justify-center md:justify-around items-center"
+      class="bg-zinc-900 py-4 md:py-6  w-full mt-12 md:flex flex-wrap justify-center md:justify-around items-center"
     >
       <div class="flex justify-center">
         <i class="fa-solid fa-cloud-arrow-down text-white text-4xl"></i>

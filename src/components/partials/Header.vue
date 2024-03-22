@@ -34,20 +34,21 @@ export default {
     },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
+      this.hidden = window.scrollY > 0;
     },
 
     checkIsMobile() {
-      this.isHidden = window.innerWidth <= 720;
+      this.hidden = window.innerWidth <= 720;
     },
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener("resize", this.checkIsMobile);
+    window.addEventListener("hidden", this.checkIsMobile);
     this.checkIsMobile();
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener("resize", this.checkIsMobile);
+    window.removeEventListener("hidden", this.checkIsMobile);
   },
 };
 </script>
@@ -99,7 +100,7 @@ export default {
 
       <!-- Input_bar -->
       <div
-        :class="{ hidden: isHidden }"
+      :class="{ hidden: hidden}"
         class="flex rounded-[16px] bg-white focus-within:border-4 focus-within:border-[#B536CD] py-2 px-3 mt-1 sm:mt-0"
       >
         <div class="pe-2 bg-white">

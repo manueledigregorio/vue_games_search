@@ -100,7 +100,7 @@ export default {
         <div class="sm:h-[330px] h-[280px] w-full sm:w-[620px]">
           <img
             :src="gameDetail.background_image"
-            class="sm:rounded-md w-full h-full"
+            class="rounded-md w-11/12 mx-auto sm:m-0 sm:w-full h-full"
             :alt="gameDetail.name"
           />
         </div>
