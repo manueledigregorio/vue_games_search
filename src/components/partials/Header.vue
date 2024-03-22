@@ -24,38 +24,38 @@ export default {
         },
       });
     },
-    goToCategory(categoryQuery){
+    goToCategory(categoryQuery) {
       this.$router.push({
         name: "Category",
         params: {
           categoryQuery: categoryQuery,
-        }
-
-      })
+        },
+      });
     },
     handleScroll() {
       this.scrolled = window.scrollY > 0;
     },
 
     checkIsMobile() {
-      this.isHidden = window.innerWidth <= 720; 
-    }
+      this.isHidden = window.innerWidth <= 720;
+    },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.checkIsMobile);
-    this.checkIsMobile(); 
+    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.checkIsMobile);
+    this.checkIsMobile();
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.checkIsMobile);
+    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.checkIsMobile);
   },
 };
 </script>
 
 <template>
   <header
-    :class="{'scrolled': scrolled }" class="sm:h-[80px] w-screen z-50 top-0 left-0 fixed flex justify-between items-center pb-2"
+    :class="{ scrolled: scrolled }"
+    class="sm:h-[80px] w-screen z-50 top-0 left-0 fixed flex justify-between items-center pb-2"
   >
     <!-- Start Left Header -->
     <div class="sm:flex items-center w-full mx-4">
@@ -99,7 +99,7 @@ export default {
 
       <!-- Input_bar -->
       <div
-        :class="{'hidden': isHidden}"
+        :class="{ hidden: isHidden }"
         class="flex rounded-[16px] bg-white focus-within:border-4 focus-within:border-[#B536CD] py-2 px-3 mt-1 sm:mt-0"
       >
         <div class="pe-2 bg-white">
@@ -123,12 +123,12 @@ export default {
   </header>
 </template>
 <style scoped lang="scss">
-.scrolled{
+.scrolled {
   background-color: rgba($color: #000000, $alpha: 0.75);
   transition: background-color 0.3s, box-shadow 0.3s;
   backdrop-filter: blur(60px) saturate(100%);
 }
-.hidden{
+.hidden {
   display: none;
 }
 </style>

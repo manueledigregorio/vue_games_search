@@ -1,6 +1,6 @@
 <script>
 export default {
-name:'Card',
+  name: "Card",
 
   methods: {
     goToGame(game) {
@@ -10,24 +10,20 @@ name:'Card',
       });
     },
   },
- 
-}
+};
 </script>
 
 <template>
-  <div
-      class="h-[240px] my-5 w-full"
-    >
-      <img
-        :src="game.background_image"
-        alt="{{ game.name }}"
-        @click="goToGame(game)"
-        class="h-full w-full object-cover rounded-md"
-      />
-      <h1 class="text-white text-center text-xl">{{ game.name }}</h1>
+  <div class="h-[240px] my-5 w-full">
+    <img
+      :src="game.background_image"
+      alt="{{ game.name }}"
+      @click="goToGame(game)"
+      class="h-full w-full object-cover rounded-md"
+    />
+    <h1 class="text-white text-center text-xl">{{ game.name }}</h1>
   </div>
 </template>
 
 <style>
-
 </style>

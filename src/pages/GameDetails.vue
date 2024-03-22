@@ -57,21 +57,23 @@ export default {
     },
   },
   computed: {
-      formattedDate() {
-        if (this.gameDetail.updated) {
-          return this.gameDetail.updated.split("T")[0];
-        } else {
-          return "Data non disponibile";
-        }
-      },
-      addVirgule(){
-        if (this.gameDetail.tags){
-        return  this.gameDetail.tags.slice(0, 3).map(tag => tag.name).join(', ');
-        } 
-        return'Non disponibile';
+    formattedDate() {
+      if (this.gameDetail.updated) {
+        return this.gameDetail.updated.split("T")[0];
+      } else {
+        return "Data non disponibile";
       }
-      
     },
+    addVirgule() {
+      if (this.gameDetail.tags) {
+        return this.gameDetail.tags
+          .slice(0, 3)
+          .map((tag) => tag.name)
+          .join(", ");
+      }
+      return "Non disponibile";
+    },
+  },
   mounted() {
     this.getGame();
   },
@@ -82,35 +84,42 @@ export default {
   <div class="bg-[#272727] min-h-screen w-full">
     <div class="relative h-[795px] lg:h-[670px]">
       <img
-        :style="{ backgroundImage: 'url(' + gameDetail.background_image_additional + ')', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }"
-        class="h-[500px]  w-full opacity-70 "
+        :style="{
+          backgroundImage:
+            'url(' + gameDetail.background_image_additional + ')',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }"
+        class="h-[500px] w-full opacity-70"
         :alt="gameDetail.name"
       />
-      <div class="separator absolute">
-
-      </div>
+      <div class="separator absolute"></div>
       <div
         class="w-full sm:max-w-7xl lg:max-w-6xl mx-auto flex lg:justify-center lg:flex-row items-center flex-col relative bottom-64"
       >
         <div class="sm:h-[330px] h-[280px] w-full sm:w-[620px]">
           <img
             :src="gameDetail.background_image"
-            class=" sm:rounded-md w-full h-full"
+            class="sm:rounded-md w-full h-full"
             :alt="gameDetail.name"
           />
         </div>
         <div
-          class=" h-[330px] px-5 lg:ml-14 lg:backdrop-filter lg:backdrop-blur-[60px] lg:backdrop-saturate-100 flex-col lg:p-6 rounded-lg text-white w-full lg:w-1/2"
+          class="h-[330px] px-5 lg:ml-14 lg:backdrop-filter lg:backdrop-blur-[60px] lg:backdrop-saturate-100 flex-col lg:p-6 rounded-lg text-white w-full lg:w-1/2"
         >
           <div class="text-2xl lg:text-3xl mt-4 mb-2">
             <h1 class="font-semibold">{{ gameDetail.name }}</h1>
           </div>
           <p class="text-gray-400">Released: {{ gameDetail.released }}</p>
-          <div class="flex flex-col mt-6 lg:rounded-xl rounded-md border border-white border-opacity-25 shadow-sm lg:border lg:border-none lg:shadow-none bg-black bg-opacity-35">
-            <h1 class="text-center text-lg " v-if="gameDetail.parent_platforms" >
+          <div
+            class="flex flex-col mt-6 lg:rounded-xl rounded-md border border-white border-opacity-25 shadow-sm lg:border lg:border-none lg:shadow-none bg-black bg-opacity-35"
+          >
+            <h1 class="text-center text-lg" v-if="gameDetail.parent_platforms">
               Disponibile per queste piattaforme
             </h1>
-            <h1 class="text-center text-lg px-40 " v-else>Nessuna piattaforma disponibile</h1>
+            <h1 class="text-center text-lg px-40" v-else>
+              Nessuna piattaforma disponibile
+            </h1>
             <div class="flex justify-center">
               <div
                 v-for="platforms in gameDetail.parent_platforms"
@@ -168,10 +177,12 @@ export default {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
 
-    <div class="sm:max-w-7xl lg:flex sm:flex-col lg:flex-row text-white lg:mx-auto">
+    <div
+      class="sm:max-w-7xl lg:flex sm:flex-col lg:flex-row text-white lg:mx-auto"
+    >
       <div class="lg:w-1/2">
         <div class="p-5">
           <h1 class="text-3xl pb-4 font-semibold text-orange-500">About</h1>
@@ -203,8 +214,11 @@ export default {
               <div class="table-cell sm:pr-9 align-middle text-gray-300">
                 Developer:
               </div>
-              <div class="table-cell align-middle pr-9 " v-if=" gameDetail.developers.length > 0 ">
-                {{ gameDetail.developers[0].name}}
+              <div
+                class="table-cell align-middle pr-9"
+                v-if="gameDetail.developers.length > 0"
+              >
+                {{ gameDetail.developers[0].name }}
               </div>
             </div>
 
@@ -212,9 +226,11 @@ export default {
               <div class="table-cell sm:pr-9 align-middle text-gray-300">
                 Publisher:
               </div>
-              <div class="table-cell align-middle pr-9" v-if="gameDetail.publishers && gameDetail.publishers.length > 0 ">
+              <div
+                class="table-cell align-middle pr-9"
+                v-if="gameDetail.publishers && gameDetail.publishers.length > 0"
+              >
                 {{ gameDetail.publishers[0].name }}
-
               </div>
               <span v-else>Nessun Publisher</span>
             </div>
@@ -229,18 +245,21 @@ export default {
               <div class="table-cell sm:pr-9 align-middle text-gray-300">
                 Genre:
               </div>
-              <div
-                class="table-cell align-middle">
-                {{addVirgule}}
+              <div class="table-cell align-middle">
+                {{ addVirgule }}
               </div>
             </div>
             <div class="table-row">
               <div class="table-cell sm:pr-9 align-middle text-gray-300">
                 Site web:
               </div>
-              <div
-                class="table-cell align-middle cursor-pointer">
-                  <a class="underline underline-offset-2 hover:text-orange-500 duration-100 text-sm" :href="gameDetail.website" target="_blank">{{ gameDetail.website }}</a>
+              <div class="table-cell align-middle cursor-pointer">
+                <a
+                  class="underline underline-offset-2 hover:text-orange-500 duration-100 text-sm"
+                  :href="gameDetail.website"
+                  target="_blank"
+                  >{{ gameDetail.website }}</a
+                >
               </div>
             </div>
           </div>
@@ -268,5 +287,4 @@ export default {
 .read-more-toggle {
   cursor: pointer;
 }
-
 </style>

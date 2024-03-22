@@ -12,14 +12,14 @@ export default {
     return {
       store,
       gamesRating: {},
-      gamesIndie:{},
+      gamesIndie: {},
     };
   },
   components: {
     Hero,
     GameCard,
     CardSlider,
-    CardSmall
+    CardSmall,
   },
   methods: {
     getGameRating() {
@@ -42,8 +42,7 @@ export default {
             key: store.key,
             page_size: 4,
             genres: "indie",
-            ordering:"-rating",
-
+            ordering: "-rating",
           },
         })
         .then((results) => {
@@ -105,28 +104,32 @@ export default {
         </div>
       </div>
     </div>
-    <div class="sm:bg-[url('../../public/deadcells.png')] bg-none bg-no-repeat bg-contain p-12 relative flex justify-center items-center md:mt-28">
+    <div
+      class="sm:bg-[url('../../public/deadcells.png')] bg-none bg-no-repeat bg-contain p-12 relative flex justify-center items-center md:mt-28"
+    >
       <div class="flex justify-center">
-        <div class=" mr-6 w-[360px] h-[590px] hidden 2xl:block">
+        <div class="mr-6 w-[360px] h-[590px] hidden 2xl:block">
           <img
             src="../../public/beheaded.png"
-            class=" w-full h-full object-cover"
+            class="w-full h-full object-cover"
             alt="beh ded"
           />
         </div>
-    
-        <div>
-          <h1 class=" mb-12 text-4xl text-orange-500 font-medium">Top Indie Games</h1>
-          <div class="grid sm:grid-cols-2 gap-4" > 
-            <CardSmall  :game="game" v-for="(game, index) in gamesIndie" :key="index" />
-            <!-- component -->
 
+        <div>
+          <h1 class="mb-12 text-4xl text-orange-500 font-medium">
+            Top Indie Games
+          </h1>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <CardSmall
+              :game="game"
+              v-for="(game, index) in gamesIndie"
+              :key="index"
+            />
+            <!-- component -->
           </div>
         </div>
       </div>
-      
-      
-     
     </div>
   </div>
 </template>
