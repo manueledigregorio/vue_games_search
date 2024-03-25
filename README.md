@@ -14,7 +14,7 @@ Vue Games Search è un'applicazione web sviluppata con Vue.js che consente agli 
 
 - **User Experience intuitiva**: L'applicazione è stata progettata con l'utente in mente, offrendo una navigazione intuitiva e una presentazione chiara delle informazioni sui giochi.
 
-- **Implementazione del tema scuro**: Gli utenti hanno la possibilità di attivare il tema scuro per una fruizione ottimale durante le ore notturne o in ambienti con scarsa luminosità.
+- **Implementazione del tema chiaro**: Gli utenti hanno la possibilità di attivare il tema scuro per una fruizione ottimale durante le ore notturne o in ambienti con scarsa luminosità.
 
 - **Cambio della lingua**: Gli utenti possono facilmente passare dalla lingua italiana all'inglese e viceversa per accedere alle informazioni sui giochi nella lingua di loro preferenza.
 
