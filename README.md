@@ -1,29 +1,59 @@
-# vue_games_search
+# Vue Games Search
 
-This template should help get you started developing with Vue 3 in Vite.
+## Panoramica del Progetto
 
-## Recommended IDE Setup
+Vue Games Search è un'applicazione web sviluppata con Vue.js che consente agli utenti di cercare e scoprire nuovi giochi utilizzando l'API di Rawg.io. L'obiettivo principale del progetto è fornire agli utenti un'esperienza coinvolgente e accessibile per esplorare un vasto catalogo di videogiochi in modo semplice e intuitivo.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Funzionalità Principali
 
-## Customize configuration
+- **Ricerca di giochi**: Gli utenti possono utilizzare la barra di ricerca per cercare giochi specifici per titolo o parole chiave.
+   
+- **Visualizzazione dettagliata dei giochi**: Cliccando su un gioco nella lista dei risultati di ricerca, gli utenti possono visualizzare dettagli aggiuntivi come la descrizione, il genere, la piattaforma e la valutazione.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Navigazione responsive**: L'interfaccia dell'applicazione è stata progettata per adattarsi a diverse dimensioni di schermo, garantendo un'esperienza utente ottimale su desktop, tablet e dispositivi mobili.
 
-## Project Setup
+- **User Experience intuitiva**: L'applicazione è stata progettata con l'utente in mente, offrendo una navigazione intuitiva e una presentazione chiara delle informazioni sui giochi.
 
-```sh
-npm install
-```
+- **Implementazione del tema scuro**: Gli utenti hanno la possibilità di attivare il tema scuro per una fruizione ottimale durante le ore notturne o in ambienti con scarsa luminosità.
 
-### Compile and Hot-Reload for Development
+- **Cambio della lingua**: Gli utenti possono facilmente passare dalla lingua italiana all'inglese e viceversa per accedere alle informazioni sui giochi nella lingua di loro preferenza.
 
-```sh
-npm run dev
-```
+- **Implementazione del loading**: È stato implementato un sistema di caricamento per ridurre i tempi di attesa durante il recupero dei dati dall'API, garantendo una navigazione fluida e senza intoppi.
 
-### Compile and Minify for Production
+## Come utilizzare il Progetto
 
-```sh
-npm run build
-```
+Per utilizzare Vue Games Search sul tuo ambiente locale, segui questi passaggi:
+
+1. Clona il repository GitHub sul tuo computer:
+
+    ```
+    git clone https://github.com/manueledigregorio/vue_games_search.git
+    ```
+
+2. Entra nella directory del progetto:
+
+    ```
+    cd vue_games_search
+    ```
+
+3. Installa le dipendenze:
+
+    ```
+    npm install
+    ```
+
+4. Avvia l'applicazione in modalità di sviluppo:
+
+    ```
+    npm run serve
+    ```
+
+5. Visita [http://localhost:8080](http://localhost:8080) nel tuo browser per utilizzare l'applicazione.
+
+## Contribuire
+
+Se desideri contribuire al progetto, sei il benvenuto! Puoi aprire un problema per segnalare bug o suggerire nuove funzionalità, oppure puoi inviare una pull request con le tue modifiche.
+
+## Contatti
+
+Per qualsiasi domanda o feedback, non esitare a contattarmi all'indirizzo email [manuele1178@gmail.com].
