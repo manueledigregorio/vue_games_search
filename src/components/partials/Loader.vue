@@ -11,13 +11,12 @@ name: "Loader"
 </template>
 <style lang="scss" scoped>
 
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 60px;
   padding: 8px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #25b09b;
+  background: #df6411;
   --_m: 
     conic-gradient(#0000 10%,#000),
     linear-gradient(#000 0 0) content-box;
