@@ -1,0 +1,38 @@
+{
+ "home":{
+  "bestseller": "I più venduti",
+  "super_fast": "Super veloce",
+  "reliable_safe": "Affidabile e sicuro",
+  "customer_support": "Supporto clienti",
+  "top_indie_games": "Migliori giochi Indie",
+  "instant_digital_download":"Download digitale istantaneo",
+  "over_games":"Oltre 10.000 giochi",
+  "human_support": "Supporto clienti 24/7"
+ },
+ "game_details": {
+    "about": "Informazioni",
+    "rating": "Valutazione",
+    "developer": "Sviluppatore",
+    "publisher": "Editore",
+    "last_update": "Ultimo Aggiornamento",
+    "genre": "Genere",
+    "website": "Sito web",
+    "available_for_these_platforms":"Disponibile per queste piattaforme",
+    "read_more":"Leggi di più",
+    "read_less":"Leggi meno"
+  
+},
+"header":{
+  "categories": "CATEGORIE"
+
+},
+"footer":{
+  "about": "Informazioni",
+  "privacy_police":"Politica sulla riservatezza",
+  "licensing": "Licenza",
+  "contact": "Contatti",
+  "all_rights_reserved":"Diritti riservati."
+}
+
+  
+}

@@ -22,6 +22,7 @@ export default {
         .get(store.apiUrl + "games/" + this.$route.params.gameSlug, {
           params: {
             key: store.key,
+            language: this.$i18n.locale
           },
         })
         .then((results) => {
@@ -57,10 +58,10 @@ export default {
       // cambia l'altezza massima del paragrafo
       if (content.style.maxHeight) {
         content.style.maxHeight = null;
-        toggleButton.innerHTML = "Read more...";
+        toggleButton.innerHTML =  this.$t('game_details.read_more');
       } else {
         content.style.maxHeight = content.scrollHeight + "px";
-        toggleButton.innerHTML = "Read less";
+        toggleButton.innerHTML =  this.$t('game_details.read_less');
       }
     },
   },
@@ -117,18 +118,15 @@ export default {
             <div class="text-2xl lg:text-3xl mt-4 mb-2">
               <h1 class="font-semibold">{{ gameDetail.name }}</h1>
             </div>
-            <p class="text-gray-400">Released: {{ gameDetail.released }}</p>
+            <p class="text-gray-400"> {{ gameDetail.released }}</p>
             <div
               class="flex flex-col mt-6 lg:rounded-xl rounded-md border border-white border-opacity-25 shadow-sm lg:border lg:border-none lg:shadow-none bg-black bg-opacity-35"
             >
               <h1
                 class="text-center text-lg"
-                v-if="gameDetail.parent_platforms"
+                
               >
-                Disponibile per queste piattaforme
-              </h1>
-              <h1 class="text-center text-lg px-40" v-else>
-                Nessuna piattaforma disponibile
+              {{ $t('game_details.available_for_these_platforms') }}
               </h1>
               <div class="flex justify-center">
                 <div
@@ -195,7 +193,7 @@ export default {
       >
         <div class="lg:w-1/2">
           <div class="p-5">
-            <h1 class="text-3xl pb-4 font-semibold text-orange-500">About</h1>
+            <h1 class="text-3xl pb-4 font-semibold text-orange-500">{{ $t('game_details.about')}}</h1>
             <p
               v-if="gameDetail.description"
               class="read-more-content text-gray-300 text-sm leading-6"
@@ -204,7 +202,7 @@ export default {
             <span
               class="read-more-toggle underline underline-offset-2 text-gray-400"
               @click="toggleReadMore()"
-              >Read more...</span
+              >{{ $t('game_details.read_more') }}</span
             >
           </div>
         </div>
@@ -213,7 +211,7 @@ export default {
             <div class="table-row-group">
               <div class="table-row">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Rating:
+                  {{ $t('game_details.rating')}}
                 </div>
                 <div class="table-cell align-middle">
                   {{ gameDetail.rating }} / 5.00
@@ -222,7 +220,7 @@ export default {
 
               <div class="table-row" v-if="gameDetail.developers">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Developer:
+                 {{ $t('game_details.developer')}}
                 </div>
                 <div
                   class="table-cell align-middle pr-9"
@@ -234,7 +232,7 @@ export default {
 
               <div class="table-row" v-if="gameDetail.developers">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Publisher:
+                  {{ $t('game_details.publisher')}}
                 </div>
                 <div
                   class="table-cell align-middle pr-9"
@@ -249,13 +247,13 @@ export default {
 
               <div class="table-row">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Last Update:
+                   {{ $t('game_details.last_update')}}
                 </div>
                 <div class="table-cell align-middle">{{ formattedDate }}</div>
               </div>
               <div class="table-row">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Genre:
+                  {{ $t('game_details.genre')}}
                 </div>
                 <div class="table-cell align-middle">
                   {{ addVirgule }}
@@ -263,7 +261,7 @@ export default {
               </div>
               <div class="table-row">
                 <div class="table-cell sm:pr-9 align-middle text-gray-300">
-                  Site web:
+                  {{ $t('game_details.website')}}
                 </div>
                 <div class="table-cell align-middle cursor-pointer">
                   <a

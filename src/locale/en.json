@@ -1,0 +1,38 @@
+{ 
+  "home":{
+    "bestseller": "Bestseller",
+    "super_fast": "Super fast",
+    "reliable_safe": "Reliable & safe",
+    "customer_support": "Customer support",
+    "top_indie_games": "Top Indie Games",
+    "Instant_digital_download":"Instant digital download",
+    "over_games":"Over 10.000 games",
+    "human_support": "Human support 24/7"
+  },
+  "game_details": {
+    "about": "About",
+    "rating": "Rating",
+    "developer": "Developer",
+    "publisher": "Publisher",
+    "last_update": "Last Update",
+    "genre": "Genre",
+    "website": "Website",
+    "available_for_these_platforms":"Available for these platforms",
+    "read_more":"Read more",
+    "read_less":"Read less"
+  
+  },
+  "header":{
+    "categories": "CATEGORIES",
+    "privacy_police":"Privacy Policy",
+    "licensing": "Licensing",
+    "contact": "Contact"
+  },
+  "footer":{
+    "about": "About",
+    "privacy_police":"Privacy police",
+    "licensing": "Licensing",
+    "contact": "Contact",
+    "all_rights_reserved":"All Rights Reserved."
+  }
+}

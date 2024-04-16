@@ -76,7 +76,7 @@ export default {
         <h1
           class="text-3xl sm:text-4xl font-semibold text-orange-500 text-center pb-6"
         >
-          Bestseller
+         {{ $t( 'home.bestseller' ) }}
         </h1>
         <CardSlider :gamesRating="gamesRating" />
       </div>
@@ -86,8 +86,8 @@ export default {
         <div class="flex justify-center">
           <i class="fa-solid fa-cloud-arrow-down text-white text-4xl"></i>
           <div class="ml-3">
-            <h2 class="text-orange-500 text-2xl font-semibold">Super fast</h2>
-            <p class="text-zinc-500 text-sm">Instant digital download</p>
+            <h2 class="text-orange-500 text-2xl font-semibold">  {{ $t( 'home.super_fast' ) }}</h2>
+            <p class="text-zinc-500 text-sm">{{ $t('home.instant_digital_download') }}</p>
           </div>
         </div>
         <div
@@ -97,9 +97,9 @@ export default {
           <i class="fa-solid fa-user-shield text-white text-4xl"></i>
           <div class="ml-3">
             <h2 class="text-orange-500 text-2xl font-semibold">
-              Reliable & safe
+               {{ $t( 'home.reliable_safe' ) }}
             </h2>
-            <p class="text-zinc-500 text-sm">Over 10,000 games</p>
+            <p class="text-zinc-500 text-sm">{{ $t('home.over_games') }}</p>
           </div>
         </div>
         <div
@@ -109,9 +109,9 @@ export default {
           <i class="fa-regular fa-comments text-white text-4xl"></i>
           <div class="ml-3">
             <h2 class="text-orange-500 text-2xl font-semibold">
-              Customer support
+               {{ $t( 'home.customer_support' ) }}
             </h2>
-            <p class="text-zinc-500 text-sm">Human support 24/7</p>
+            <p class="text-zinc-500 text-sm">{{ $t('home.human_support') }}</p>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ export default {
 
           <div>
             <h1 class="mb-12 text-4xl text-orange-500 font-medium">
-              Top Indie Games
+              {{ $t( 'home.top_indie_games' ) }}
             </h1>
             <div class="grid sm:grid-cols-2 gap-4">
               <CardSmall

@@ -3,6 +3,8 @@ import axios from "axios";
 import { store } from "../../data/store";
 import { router } from "../../router";
 
+
+
 export default {
   name: "Header",
   data() {
@@ -16,6 +18,9 @@ export default {
     };
   },
   methods: {
+    async changeLanguage(lang) {
+      await setI18nLanguage(lang); // Imposta la lingua corrente
+    },
     goSearch() {
       this.$router.replace({
         name: "Search",
@@ -74,7 +79,7 @@ export default {
             @click="isOpen = !isOpen"
             class="text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
           >
-            <span class="text-white text-lg">CATEGORIES</span>
+            <span class="text-white text-lg">{{ $t('header.categories') }}</span>
             <i
               :class="{ 'fa-chevron-up': isOpen, 'fa-chevron-down': !isOpen }"
               class="fa p-1 text-white"
@@ -119,7 +124,11 @@ export default {
     <!-- END Left Header -->
 
     <!-- Start Center Header  -->
-    <div class="hidden"></div>
+    <div class="locale-changer mr-6 ">
+    <select class=" p-1 rounded-md" v-model="$i18n.locale">
+      <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">{{ locale }}</option>
+    </select>
+  </div>
     <!-- END Center Header-->
   </header>
 </template>
